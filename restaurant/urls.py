@@ -16,14 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app_restaurant import views
-from app_restaurant.views import RestaurantListView, RestaurantDetailView
+from app_restaurant.views import RestaurantListView, \
+    RestaurantDetailView
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/',
+         admin.site.urls),
     path('', views.api_root),
-    path('restaurants/', RestaurantListView.as_view(), name='restaurant-list'),
-    path('restaurants/<int:pk>', RestaurantDetailView.as_view()),
+    path('restaurants/',
+         RestaurantListView.as_view(),
+         name='restaurant-list'),
+    path('restaurants/<int:pk>',
+         RestaurantDetailView.as_view(),
+         name='restaurant-detail'),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
