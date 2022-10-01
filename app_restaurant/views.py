@@ -19,7 +19,7 @@ def api_root(request, format=None):
         
         'restaurants': reverse('restaurant-list', request=request, format=format)
     })
-class RestaurantListView(generics.ListCreateAPIView):
+class RestaurantsView(generics.ListCreateAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
 
