@@ -40,3 +40,5 @@ class Command(BaseCommand):
             # section_pk.restaurants.add(restaurant_pk)
 
         self.stdout.write(self.style.SUCCESS(f"dopisane {total} rekordów"))
+
+# poetry run python manage.py create_section 20

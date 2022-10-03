@@ -41,3 +41,5 @@ class Command(BaseCommand):
             )
 
         self.stdout.write(self.style.SUCCESS(f"dopisane {total} rekordów"))
+
+# poetry run python manage.py create_restaurant 20

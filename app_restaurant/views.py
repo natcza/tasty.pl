@@ -1,11 +1,6 @@
 from django.shortcuts import render
-
-# Create your views here.
-# from django.views import generic
-
-from .models import Restaurant
-from .serializers import RestaurantSerializer
-
+from .models import Restaurant, Section
+from .serializers import RestaurantSerializer, SectionSerializer
 from rest_framework import renderers
 from rest_framework import generics
 from rest_framework.decorators import api_view
@@ -26,4 +21,11 @@ class RestaurantsView(generics.ListCreateAPIView):
 class RestaurantDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
+
+class SectionsView(generics.ListCreateAPIView):
+    serializer_classs = SectionSerializer
+    def list(self, request, *args, **kwargs):
+        queryset = Section.objects.filter(restaurants=self.kwargs['pk'])
+        serializer = SectionSerializer(queryset, many=True)
+        return Response(serializer.data)
 
