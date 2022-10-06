@@ -8,9 +8,10 @@ class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['url', 'name', 'city', 'street']
 
 class SectionSerializer(serializers.HyperlinkedModelSerializer):
+
     class Meta:
         model = Section
-        fields = ['name']
+        fields = ['id', 'name']
 
 # class RestaurantDetailSerializer(serializers.ModelSerializer):
 # class RestaurantDetailSerializer(serializers.HyperlinkedModelSerializer):

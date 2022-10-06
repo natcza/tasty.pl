@@ -11,16 +11,20 @@ from rest_framework.reverse import reverse
 @api_view(['GET'])
 def api_root(request, format=None):
     return Response({
-        
+
         'restaurants': reverse('restaurant-list', request=request, format=format)
     })
+
+
 class RestaurantsView(generics.ListCreateAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
 
+
 class RestaurantDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
+
 
 class SectionsView(generics.ListCreateAPIView):
     serializer_class = SectionSerializer
@@ -28,5 +32,5 @@ class SectionsView(generics.ListCreateAPIView):
 
     def get_queryset(self):
         r = self.kwargs['pk']
-        
+
         return Section.objects.filter(restaurants=r)
