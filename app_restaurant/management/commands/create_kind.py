@@ -5,7 +5,7 @@ from app_restaurant.models import Restaurant, Kind
 
 
 class Command(BaseCommand):
-    help = "wypełnij restaurant danymi -- python manage.py create kind"
+    help = "wypełnij kind danymi -- python manage.py create kind"
 
     def add_arguments(self, parser):
         parser.add_argument('total', nargs=1, type=int, help='Indicates the number of kinds to be created')
@@ -29,7 +29,7 @@ class Command(BaseCommand):
         # https://docs.python.org/3.9/library/string.html
         # postfix = "{:0>5}".format(str(ostatni + 1))
 
-        print("create_restaurant")
+        print("create_kind")
         for i in range(number_kinds):
             postfix = str("{:0>5}".format(str(ostatni + 1 + i)))
             # print(postfix)

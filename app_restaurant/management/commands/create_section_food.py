@@ -5,7 +5,7 @@ from app_restaurant.models import Section, Restaurant, Food
 
 
 class Command(BaseCommand):
-    help = "wypełnij restaurant danymi -- python manage.py create_section"
+    help = "wypełnij food danymi -- python manage.py create_section"
 
     def add_arguments(self, parser):
         parser.add_argument('total', nargs=2, type=int, help='Indicates the number of sections to be created')

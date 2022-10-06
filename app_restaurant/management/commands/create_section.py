@@ -5,7 +5,7 @@ from app_restaurant.models import Section, Restaurant
 
 
 class Command(BaseCommand):
-    help = "wypełnij restaurant danymi -- python manage.py create_section"
+    help = "wypełnij sekcje danymi -- python manage.py create_section"
 
     def add_arguments(self, parser):
         parser.add_argument('total', nargs=1, type=int, help='Indicates the number of sections to be created')
@@ -24,9 +24,6 @@ class Command(BaseCommand):
         else:
             ostatni = 0
 
-        # postfix kolejnej wartości
-        # https://docs.python.org/3.9/library/string.html
-        # postfix = "{:0>5}".format(str(ostatni + 1))
 
         print("create_restaurant")
         for i in range(number_sections):
@@ -35,8 +32,5 @@ class Command(BaseCommand):
             Section.objects.create(
                 name="section_" + postfix,
             )
-            # section_pk = Section.objects.get(pk=section.id)
-            # restaurant_pk = Restaurant.objects.get(pk=id_restaurant)
-            # section_pk.restaurants.add(restaurant_pk)
 
         self.stdout.write(self.style.SUCCESS(f"dopisane {total} rekordów"))

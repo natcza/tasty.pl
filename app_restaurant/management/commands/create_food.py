@@ -5,7 +5,7 @@ from app_restaurant.models import Food
 
 
 class Command(BaseCommand):
-    help = "wypełnij restaurant danymi -- python manage.py create_section"
+    help = "wypełnij food danymi -- python manage.py create_food"
 
     def add_arguments(self, parser):
         parser.add_argument('total', nargs=1, type=int, help='Indicates the number of food to be created')
@@ -28,7 +28,7 @@ class Command(BaseCommand):
         # https://docs.python.org/3.9/library/string.html
         # postfix = "{:0>5}".format(str(ostatni + 1))
 
-        print("create_restaurant")
+        print("create_food")
         for i in range(number_food):
             postfix = str("{:0>5}".format(str(ostatni + 1 + i)))
             # print(postfix)
@@ -37,8 +37,6 @@ class Command(BaseCommand):
                 price = i,
 
             )
-            # section_pk = Section.objects.get(pk=section.id)
-            # restaurant_pk = Restaurant.objects.get(pk=id_restaurant)
-            # section_pk.restaurants.add(restaurant_pk)
+
 
         self.stdout.write(self.style.SUCCESS(f"dopisane {total} rekordów"))
