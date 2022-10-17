@@ -25,8 +25,6 @@ class RestaurantDetailView(generics.RetrieveUpdateDestroyAPIView):
 class SectionsView(generics.ListCreateAPIView):
     serializer_class = SectionSerializer
     queryset = Section
-
     def get_queryset(self):
-        r = self.kwargs['pk']
-        
-        return Section.objects.filter(restaurants=r)
+        restaurant_pk = self.kwargs['pk']
+        return Section.objects.filter(restaurants=restaurant_pk)

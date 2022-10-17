@@ -20,6 +20,7 @@ class Restaurant(models.Model):
 class Section(models.Model):
     name = models.CharField(max_length=64)
     restaurants = models.ManyToManyField(Restaurant)
+    description = models.CharField(max_length=1000)
 
 
 class Food(models.Model):
