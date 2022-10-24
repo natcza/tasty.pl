@@ -1,0 +1,14 @@
+site_name: tasty_pl API
+theme:
+  name: material
+  features:
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+plugins:
+  - search
+markdown_extensions:
+  - attr_list
+nav:
+  - Introduction: "index.md"
+  - Komendy: "pages/command.md"
