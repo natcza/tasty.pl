@@ -4,5 +4,7 @@ db.sqlite3
 
 
 .idea/
+misc.xml
+restaurant.iml
 
 migrations/
