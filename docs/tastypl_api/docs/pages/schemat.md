@@ -2,8 +2,8 @@
 
 ``` mermaid
 graph LR
-    A[Square Rect] -- Link text --> B((Circle))
-    A --> C(Round Rect)
-    B --> D{Rhombus}
+    A[Restaurant] --> B[Section]
+    A --> C[Food]
+    B --> D[Kind]
     C --> D
 ```
