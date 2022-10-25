@@ -9,6 +9,16 @@ plugins:
   - search
 markdown_extensions:
   - attr_list
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 nav:
   - Introduction: "index.md"
   - Komendy: "pages/command.md"
+  - Schemat: "pages/schemat.md"
+  - Endpointy: "pages/endpoint"
+
+repo_url: https://github.com/natcza/tasty.pl/tree/dev_03_jz
+
