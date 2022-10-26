@@ -18,6 +18,7 @@ nav:
   - Introduction: "index.md"
   - Komendy: "pages/command.md"
   - Schemat Modeli: "pages/schemat_models.md"
+  - Architektura: "pages/architektura.md"
   - Endpointy: "pages/endpoint"
 
 repo_url: https://github.com/natcza/tasty.pl/tree/dev_03_jz
