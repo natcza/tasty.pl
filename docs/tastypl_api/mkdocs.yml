@@ -17,7 +17,7 @@ markdown_extensions:
 nav:
   - Introduction: "index.md"
   - Komendy: "pages/command.md"
-  - Schemat: "pages/schemat.md"
+  - Schemat Modeli: "pages/schemat_models.md"
   - Endpointy: "pages/endpoint"
 
 repo_url: https://github.com/natcza/tasty.pl/tree/dev_03_jz
