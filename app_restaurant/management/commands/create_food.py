@@ -5,8 +5,7 @@ from app_restaurant.models import Food
 
 
 class Command(BaseCommand):
-    help = "wypełnij restaurant danymi -- python manage.py create_section"
-
+    help = "wypełnij food danymi -- python manage.py create_food
     def add_arguments(self, parser):
         parser.add_argument('total', nargs=1, type=int, help='Indicates the number of food to be created')
 
@@ -41,6 +40,6 @@ class Command(BaseCommand):
             # restaurant_pk = Restaurant.objects.get(pk=id_restaurant)
             # section_pk.restaurants.add(restaurant_pk)
 
-        self.stdout.write(self.style.SUCCESS(f"dopisane {total} rekordów"))
+        self.stdout.write(self.style.SUCCESS(f"dopisane {total} rekordów w tabeli Food"))
 
 # poetry run python manage.py create_food

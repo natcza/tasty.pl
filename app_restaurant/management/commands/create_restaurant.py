@@ -40,6 +40,6 @@ class Command(BaseCommand):
                 gis="gis_" + postfix,
             )
 
-        self.stdout.write(self.style.SUCCESS(f"dopisane {total} rekordów"))
+        self.stdout.write(self.style.SUCCESS(f"dopisane {total} rekordów do tabeli Restaurant"))
 
 # poetry run python manage.py create_restaurant 20
