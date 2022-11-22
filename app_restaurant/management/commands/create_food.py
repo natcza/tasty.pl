@@ -5,7 +5,7 @@ from app_restaurant.models import Food
 
 
 class Command(BaseCommand):
-    help = "wypełnij food danymi -- python manage.py create_food
+    help = "wypełnij food danymi -- python manage.py create_food"
     def add_arguments(self, parser):
         parser.add_argument('total', nargs=1, type=int, help='Indicates the number of food to be created')
 
