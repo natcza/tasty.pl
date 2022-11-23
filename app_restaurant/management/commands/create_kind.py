@@ -3,6 +3,9 @@ from django.core.management.base import BaseCommand
 
 from app_restaurant.models import Restaurant, Kind
 
+"""
+poetry run python manage.py create_kind 20     
+"""
 
 class Command(BaseCommand):
     help = "wypełnij restaurant danymi -- python manage.py create kind"

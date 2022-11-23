@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Restaurant, Section
-from .serializers import RestaurantSerializer, SectionSerializer
+from .models import Restaurant, Section, Kind
+from .serializers import RestaurantSerializer, SectionSerializer, KindSerializer
 from rest_framework import renderers
 from rest_framework import generics
 from rest_framework.decorators import api_view
@@ -12,11 +12,16 @@ from rest_framework.reverse import reverse
 def api_root(request, format=None):
     return Response({
         
-        'restaurants': reverse('restaurant-list', request=request, format=format)
+        # 'restaurants': reverse('restaurant-list', request=request, format=format)
+        'restaurants': reverse('kind-list', request=request, format=format)
     })
-class RestaurantsView(generics.ListCreateAPIView):
-    queryset = Restaurant.objects.all()
-    serializer_class = RestaurantSerializer
+# class RestaurantsView(generics.ListCreateAPIView):
+#     queryset = Restaurant.objects.all()
+#     serializer_class = RestaurantSerializer
+
+class KindsView(generics.ListCreateAPIView):
+    queryset = Kind.objects.all()
+    serializer_class = KindSerializer
 
 class RestaurantDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Restaurant.objects.all()

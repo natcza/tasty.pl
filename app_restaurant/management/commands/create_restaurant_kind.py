@@ -3,6 +3,9 @@ from django.core.management.base import BaseCommand
 import random
 from app_restaurant.models import Restaurant, Kind
 
+"""
+poetry run python manage.py create_restaurant_kind 19 10   
+"""
 
 class Command(BaseCommand):
     help = "wypełnij restaurant danymi -- python manage.py create_restaurant_kind"

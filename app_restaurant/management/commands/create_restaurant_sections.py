@@ -3,6 +3,10 @@ from django.core.management.base import BaseCommand
 import random
 from app_restaurant.models import Section, Restaurant
 
+"""
+poetry run python manage.py create_restaurant_sections 18 10
+
+"""
 
 class Command(BaseCommand):
     help = "wypełnij restaurant danymi -- python manage.py create_section"
