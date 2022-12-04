@@ -15,6 +15,8 @@ class Restaurant(models.Model):
     delivery_price = models.DecimalField(max_digits=6, decimal_places=2, null=True)
     minimum_order_price = models.DecimalField(max_digits=6, decimal_places=2, null=True)
     free_delivery = models.DecimalField(max_digits=6, decimal_places=2, null=True)
+    def __str__(self):
+        return self.name
 
 
 class Section(models.Model):
