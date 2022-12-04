@@ -31,4 +31,4 @@ class Food(models.Model):
 
 class Kind(models.Model):
     name = models.CharField(max_length=64)
-    restaurants = models.ManyToManyField(Restaurant)
+    restaurants = models.ManyToManyField(Restaurant, related_name='kind_list')

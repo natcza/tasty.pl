@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from app_restaurant import views
 from app_restaurant.views import (
-    # RestaurantsView,
+    RestaurantsView,
     RestaurantDetailView,
     SectionsView,
     KindsView,
@@ -27,7 +27,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.api_root),
-    # path('restaurants/', RestaurantsView.as_view(), name='restaurant-list'),
+    path('restaurants/', RestaurantsView.as_view(), name='restaurant-list'),
     path('kinds/', KindsView.as_view(), name='kind-list'),
     path('restaurants/<int:pk>', RestaurantDetailView.as_view(), name='restaurant-detail'),
     path('restaurants/<int:pk>/sections/', SectionsView.as_view(), name='section-list')

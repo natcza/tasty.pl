@@ -12,12 +12,12 @@ from rest_framework.reverse import reverse
 def api_root(request, format=None):
     return Response({
         
-        # 'restaurants': reverse('restaurant-list', request=request, format=format)
-        'restaurants': reverse('kind-list', request=request, format=format)
+        'restaurants': reverse('restaurant-list', request=request, format=format),
+        'kinds': reverse('kind-list', request=request, format=format)
     })
-# class RestaurantsView(generics.ListCreateAPIView):
-#     queryset = Restaurant.objects.all()
-#     serializer_class = RestaurantSerializer
+class RestaurantsView(generics.ListCreateAPIView):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
 
 class KindsView(generics.ListCreateAPIView):
     queryset = Kind.objects.all()
