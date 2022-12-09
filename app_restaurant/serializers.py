@@ -8,7 +8,7 @@ class KindSerializer(serializers.HyperlinkedModelSerializer):
     restaurants = serializers.HyperlinkedRelatedField(queryset=Restaurant.objects.all(), many=True,
                                                       view_name='restaurant-detail')
     # url = serializers.CharField(source='get_absolute_url', read_only=True)
-    view_name = 'kind'
+    # view_name = 'kind'
 
     # restaurants = serializers.SlugRelatedField(queryset=Restaurant.objects.all(), many=True,
     #                                                   slug_field='name')
