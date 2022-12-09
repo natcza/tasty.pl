@@ -2,8 +2,10 @@
 2022.12.09
 /Combine List
 {
-    "restaurant" : restaurant.data,
-    "kind" : kind.data
+    "restaurant-count" : resteaurant-count,
+    "restaurants" : restaurant.data,
+    "kind-count" : kind-count,
+    "kinds" : kind.data
 }
 
 

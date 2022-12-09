@@ -69,6 +69,8 @@ class CombineListView(generics.ListCreateAPIView):
         serializer_kind = KindOnlySerializer(kind, many=True)
 
         return Response({
-            "restaurant": serializer_restaurant.data,
-            "kind": serializer_kind.data
+            "restaturant-count" : Restaurant.objects.all().count(),
+            "restaurants": serializer_restaurant.data,
+            "kind-count" : Kind.objects.all().count(),
+            "kinds": serializer_kind.data
         })
