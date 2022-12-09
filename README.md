@@ -1,9 +1,17 @@
 # tasty.pl
+2022.12.09
+/Combine List
+{
+    "restaurant" : restaurant.data,
+    "kind" : kind.data
+}
+
+
 
 endpoint dla głównego katalogu API 
 --> API root
 
-# Seckcje
+# Sekcje
 
 03.10.2022
 Done:

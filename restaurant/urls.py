@@ -21,6 +21,7 @@ from app_restaurant.views import (
     RestaurantDetailView,
     SectionsView,
     KindsView,
+    CombineListView,
 )
 from rest_framework.urlpatterns import format_suffix_patterns
 
@@ -30,7 +31,8 @@ urlpatterns = [
     path('restaurants/', RestaurantsView.as_view(), name='restaurant-list'),
     path('kinds/', KindsView.as_view(), name='kind-list'),
     path('restaurants/<int:pk>', RestaurantDetailView.as_view(), name='restaurant-detail'),
-    path('restaurants/<int:pk>/sections/', SectionsView.as_view(), name='section-list')
+    path('restaurants/<int:pk>/sections/', SectionsView.as_view(), name='section-list'),
+    path('combines/', CombineListView.as_view(), name='combine-list')
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
